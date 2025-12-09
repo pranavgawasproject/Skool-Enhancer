@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Generate Skool Enhancer Icons</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; text-align: center; }
+    button { padding: 15px 30px; font-size: 18px; cursor: pointer; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 8px; margin: 10px; }
+    button:hover { transform: scale(1.05); }
+    .preview { margin: 20px; display: flex; gap: 20px; justify-content: center; align-items: flex-end; }
+    canvas { border: 1px solid #ccc; }
+  </style>
+</head>
+<body>
+  <h1>🎓 Skool Enhancer Icon Generator</h1>
+  <p>Click the button below to generate and download all icon sizes</p>
+  <button onclick="generateIcons()">📥 Download All Icons</button>
+  
+  <div class="preview" id="preview"></div>
+  
+  <script>
+    function createIcon(size) {
+      const canvas = document.createElement('canvas');
+      canvas.width = size;
+      canvas.height = size;
+      const ctx = canvas.getContext('2d');
+      
+      // Gradient background
+      const gradient = ctx.createLinearGradient(0, 0, size, size);
+      gradient.addColorStop(0, '#667eea');
+      gradient.addColorStop(1, '#764ba2');
+      ctx.fillStyle = gradient;
+      
+      // Draw rounded rectangle
+      const radius = size * 0.18;
+      ctx.beginPath();
+      ctx.moveTo(radius, 0);
+      ctx.lineTo(size - radius, 0);
+      ctx.quadraticCurveTo(size, 0, size, radius);
+      ctx.lineTo(size, size - radius);
+      ctx.quadraticCurveTo(size, size, size - radius, size);
+      ctx.lineTo(radius, size);
+      ctx.quadraticCurveTo(0, size, 0, size - radius);
+      ctx.lineTo(0, radius);
+      ctx.quadraticCurveTo(0, 0, radius, 0);
+      ctx.closePath();
+      ctx.fill();
+      
+      // Draw graduation cap icon
+      ctx.fillStyle = 'white';
+      const centerX = size / 2;
+      const centerY = size / 2;
+      const scale = size / 128;
+      
+      // Cap top (diamond)
+      ctx.beginPath();
+      ctx.moveTo(centerX, centerY - 25 * scale);
+      ctx.lineTo(centerX + 45 * scale, centerY);
+      ctx.lineTo(centerX, centerY + 15 * scale);
+      ctx.lineTo(centerX - 45 * scale, centerY);
+      ctx.closePath();
+      ctx.fill();
+      
+      // Cap bottom
+      ctx.beginPath();
+      ctx.moveTo(centerX - 35 * scale, centerY + 5 * scale);
+      ctx.lineTo(centerX + 35 * scale, centerY + 5 * scale);
+      ctx.lineTo(centerX + 30 * scale, centerY + 25 * scale);
+      ctx.lineTo(centerX - 30 * scale, centerY + 25 * scale);
+      ctx.closePath();
+      ctx.fill();
+      
+      // Tassel
+      ctx.beginPath();
+      ctx.moveTo(centerX + 35 * scale, centerY);
+      ctx.lineTo(centerX + 40 * scale, centerY + 30 * scale);
+      ctx.strokeStyle = 'white';
+      ctx.lineWidth = 3 * scale;
+      ctx.stroke();
+      
+      // Tassel ball
+      ctx.beginPath();
+      ctx.arc(centerX + 40 * scale, centerY + 33 * scale, 4 * scale, 0, Math.PI * 2);
+      ctx.fill();
+      
+      return canvas;
+    }
+    
+    function generateIcons() {
+      const sizes = [16, 48, 128];
+      sizes.forEach((size, index) => {
+        setTimeout(() => {
+          const canvas = createIcon(size);
+          const link = document.createElement('a');
+          link.download = 'icon' + size + '.png';
+          link.href = canvas.toDataURL('image/png');
+          link.click();
+        }, index * 500);
+      });
+    }
+    
+    // Show preview
+    window.onload = function() {
+      const preview = document.getElementById('preview');
+      [16, 48, 128].forEach(size => {
+        const canvas = createIcon(size);
+        const wrapper = document.createElement('div');
+        wrapper.innerHTML = '<p>' + size + 'x' + size + '</p>';
+        wrapper.appendChild(canvas);
+        preview.appendChild(wrapper);
+      });
+    };
+  </script>
+</body>
+</html>

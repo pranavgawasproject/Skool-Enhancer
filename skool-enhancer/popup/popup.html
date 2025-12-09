@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skool Enhancer</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">🎓</span>
+        <h1>Skool Enhancer</h1>
+      </div>
+      <span class="version">v1.0</span>
+    </header>
+
+    <!-- Status -->
+    <div class="status-bar" id="statusBar">
+      <span class="status-dot"></span>
+      <span class="status-text">Checking Skool page...</span>
+    </div>
+
+    <!-- Main Controls -->
+    <main class="main-content">
+      
+      <!-- Dark Mode Toggle -->
+      <section class="control-section">
+        <div class="control-row">
+          <div class="control-info">
+            <span class="control-icon">🌙</span>
+            <div class="control-text">
+              <h3>Dark Mode</h3>
+              <p>Easy on the eyes</p>
+            </div>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+      </section>
+
+      <!-- Auto-Save Drafts -->
+      <section class="control-section">
+        <div class="control-row">
+          <div class="control-info">
+            <span class="control-icon">💾</span>
+            <div class="control-text">
+              <h3>Auto-Save Drafts</h3>
+              <p>Never lose your posts</p>
+            </div>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="autoSaveToggle" checked>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+        <div class="sub-info" id="draftCount">
+          <span>📝 0 drafts saved</span>
+        </div>
+      </section>
+
+      <!-- Bookmarks Section -->
+      <section class="control-section">
+        <div class="section-header">
+          <span class="control-icon">🔖</span>
+          <h3>Bookmarked Posts</h3>
+        </div>
+        <div class="bookmarks-container" id="bookmarksContainer">
+          <div class="empty-state">
+            <span>📚</span>
+            <p>No bookmarks yet</p>
+            <small>Click the bookmark icon on any Skool post</small>
+          </div>
+        </div>
+        <div class="bookmark-actions">
+          <button class="btn btn-secondary" id="exportBookmarks">
+            📤 Export All
+          </button>
+          <button class="btn btn-danger" id="clearBookmarks">
+            🗑️ Clear All
+          </button>
+        </div>
+      </section>
+
+      <!-- Drafts Section -->
+      <section class="control-section">
+        <div class="section-header">
+          <span class="control-icon">📝</span>
+          <h3>Saved Drafts</h3>
+        </div>
+        <div class="drafts-container" id="draftsContainer">
+          <div class="empty-state">
+            <span>✏️</span>
+            <p>No drafts saved</p>
+            <small>Start typing in Skool to auto-save</small>
+          </div>
+        </div>
+        <div class="draft-actions">
+          <button class="btn btn-danger" id="clearDrafts">
+            🗑️ Clear All Drafts
+          </button>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <a href="#" id="rateLink">⭐ Rate Extension</a>
+      <span class="divider">•</span>
+      <a href="#" id="supportLink">💬 Support</a>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,298 @@
+/* ============================================
+   SKOOL ENHANCER - CONTENT STYLES
+   ============================================ */
+
+/* Bookmark Button */
+.skool-enhancer-bookmark-btn {
+  background: none !important;
+  border: none !important;
+  font-size: 20px !important;
+  cursor: pointer !important;
+  padding: 4px 8px !important;
+  border-radius: 4px !important;
+  transition: all 0.2s ease !important;
+  opacity: 0.6;
+}
+
+.skool-enhancer-bookmark-btn:hover {
+  opacity: 1 !important;
+  transform: scale(1.1) !important;
+  background: rgba(0, 0, 0, 0.05) !important;
+}
+
+.skool-enhancer-bookmark-btn:active {
+  transform: scale(0.95) !important;
+}
+
+.skool-enhancer-bookmark-btn.bookmarked {
+  opacity: 1 !important;
+  color: #667eea !important;
+}
+
+/* Actions Container */
+.skool-enhancer-actions {
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  padding: 8px 12px !important;
+  border-top: 1px solid #eee !important;
+  gap: 8px !important;
+}
+
+/* Save Indicator */
+#skool-enhancer-save-indicator {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+  padding: 12px 20px !important;
+  border-radius: 10px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4) !important;
+  z-index: 999999 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+/* Notification */
+#skool-enhancer-notification {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  padding: 12px 20px !important;
+  border-radius: 10px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+  z-index: 999999 !important;
+  color: white !important;
+}
+
+/* Draft Restore Button */
+.skool-enhancer-restore-draft {
+  position: fixed !important;
+  bottom: 80px !important;
+  right: 20px !important;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+  padding: 12px 20px !important;
+  border-radius: 10px !important;
+  border: none !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4) !important;
+  z-index: 999998 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  transition: all 0.3s ease !important;
+}
+
+.skool-enhancer-restore-draft:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5) !important;
+}
+
+/* Dark Mode Styles */
+.skool-enhancer-dark {
+  --bg-primary: #1a1a2e !important;
+  --bg-secondary: #16213e !important;
+  --bg-tertiary: #0f3460 !important;
+  --text-primary: #e8e8e8 !important;
+  --text-secondary: #b8b8b8 !important;
+  --border-color: #2a2a4a !important;
+}
+
+.skool-enhancer-dark body {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+.skool-enhancer-dark header,
+.skool-enhancer-dark nav,
+.skool-enhancer-dark .navbar {
+  background-color: var(--bg-secondary) !important;
+  border-color: var(--border-color) !important;
+}
+
+.skool-enhancer-dark main,
+.skool-enhancer-dark .main-content,
+.skool-enhancer-dark .content {
+  background-color: var(--bg-primary) !important;
+}
+
+.skool-enhancer-dark article,
+.skool-enhancer-dark .post,
+.skool-enhancer-dark .post-card,
+.skool-enhancer-dark .card {
+  background-color: var(--bg-secondary) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+.skool-enhancer-dark input,
+.skool-enhancer-dark textarea,
+.skool-enhancer-dark select {
+  background-color: var(--bg-tertiary) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+.skool-enhancer-dark a {
+  color: #8b9ff8 !important;
+}
+
+.skool-enhancer-dark img,
+.skool-enhancer-dark video,
+.skool-enhancer-dark iframe {
+  opacity: 0.9 !important;
+}
+
+/* Scrollbar for Dark Mode */
+.skool-enhancer-dark ::-webkit-scrollbar {
+  width: 8px !important;
+  height: 8px !important;
+}
+
+.skool-enhancer-dark ::-webkit-scrollbar-track {
+  background: var(--bg-primary) !important;
+}
+
+.skool-enhancer-dark ::-webkit-scrollbar-thumb {
+  background: var(--bg-tertiary) !important;
+  border-radius: 4px !important;
+}
+
+.skool-enhancer-dark ::-webkit-scrollbar-thumb:hover {
+  background: #1a5a9e !important;
+}
+
+/* Animations */
+@keyframes skoolFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes skoolFadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes skoolPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes skoolSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Tooltip */
+.skool-enhancer-tooltip {
+  position: absolute !important;
+  background: #333 !important;
+  color: white !important;
+  padding: 6px 10px !important;
+  border-radius: 6px !important;
+  font-size: 12px !important;
+  white-space: nowrap !important;
+  z-index: 1000000 !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+  transition: opacity 0.2s ease !important;
+}
+
+.skool-enhancer-tooltip.visible {
+  opacity: 1 !important;
+}
+
+.skool-enhancer-tooltip::after {
+  content: '' !important;
+  position: absolute !important;
+  top: 100% !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  border: 5px solid transparent !important;
+  border-top-color: #333 !important;
+}
+
+/* Character Counter */
+.skool-enhancer-char-counter {
+  position: absolute !important;
+  bottom: 8px !important;
+  right: 12px !important;
+  font-size: 11px !important;
+  color: #888 !important;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+.skool-enhancer-char-counter.warning {
+  color: #ff9800 !important;
+}
+
+.skool-enhancer-char-counter.danger {
+  color: #f44336 !important;
+}
+
+/* Quick Actions Bar */
+.skool-enhancer-quick-actions {
+  position: fixed !important;
+  bottom: 20px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  background: white !important;
+  padding: 8px 16px !important;
+  border-radius: 50px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
+  display: flex !important;
+  gap: 12px !important;
+  z-index: 999990 !important;
+}
+
+.skool-enhancer-dark .skool-enhancer-quick-actions {
+  background: var(--bg-secondary) !important;
+}
+
+.skool-enhancer-quick-action-btn {
+  background: none !important;
+  border: none !important;
+  font-size: 20px !important;
+  cursor: pointer !important;
+  padding: 8px !important;
+  border-radius: 50% !important;
+  transition: all 0.2s ease !important;
+}
+
+.skool-enhancer-quick-action-btn:hover {
+  background: rgba(102, 126, 234, 0.1) !important;
+  transform: scale(1.1) !important;
+}
